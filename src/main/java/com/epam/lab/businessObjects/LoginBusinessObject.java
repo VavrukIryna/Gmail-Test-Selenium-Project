@@ -8,7 +8,7 @@ public class LoginBusinessObject {
     private LoginPage loginPage;
     private PasswordPage passwordPage;
 
-     public LoginBusinessObject() {
+    public LoginBusinessObject() {
         this.loginPage = new LoginPage();
         this.passwordPage = new PasswordPage();
     }

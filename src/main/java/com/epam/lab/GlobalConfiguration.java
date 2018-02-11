@@ -19,7 +19,6 @@ public class GlobalConfiguration {
             input = new FileInputStream("src//main//resources//config.properties");
             prop.load(input);
             URL = prop.getProperty("url");
-
             NAME_DRIVER = prop.getProperty("name.driver");
             PATH_DRIVER = prop.getProperty("path.driver");
         } catch (IOException ex) {

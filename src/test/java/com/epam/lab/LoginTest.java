@@ -17,14 +17,6 @@ public class LoginTest {
     private WebDriver driver = null;
     private WebDriverWait wait = null;
 
-  /*  public List<MessageDataProp> getDataList() {
-        return dataList;
-    }
-
-    public void setDataList(List<MessageDataProp> dataList) {
-        this.dataList = dataList;
-    }
-*/
     private List<MessageDataProp> dataList;
 
     private String myEmail;
@@ -45,29 +37,27 @@ public class LoginTest {
         System.setProperty(com.epam.lab.GlobalConfiguration.NAME_DRIVER, com.epam.lab.GlobalConfiguration.PATH_DRIVER);
         driver = DriverThreadInit.getInstance().getDriver();
         driver.navigate().to(GlobalConfiguration.URL);
-
-
     }
 
 
     @Test
     public void composeMail() {
-        dataList=XmlToData.getMessageData();
+        dataList = XmlToData.getMessageData();
 
         LoginBusinessObject loginBusinessObject = new LoginBusinessObject();
-       MailBusinessObject mailBusinessObject = new MailBusinessObject();
+        MailBusinessObject mailBusinessObject = new MailBusinessObject();
         loginBusinessObject.loginUser(myEmail, myPassword);
-          mailBusinessObject.writeMessage(dataList.get(0).getIncorrectMail(), dataList.get(0).getTestSubject(), dataList.get(0).getTestMessage());
+        mailBusinessObject.writeMessage(dataList.get(0).getIncorrectMail(), dataList.get(0).getTestSubject(), dataList.get(0).getTestMessage());
         assertTrue(mailBusinessObject.verifyWarningMessageExists());
         mailBusinessObject.closeWarningMessage();
-          mailBusinessObject.writeMessage(dataList.get(0).getCorrectMail());
+        mailBusinessObject.writeMessage(dataList.get(0).getCorrectMail());
         assertEquals(dataList.get(0).getCorrectMail(), mailBusinessObject.checkMail());
     }
 
     @AfterMethod
     public void close() {
-            if (driver != null) {
-                DriverThreadInit.getInstance().removeDriver();
-            }
+        if (driver != null) {
+            DriverThreadInit.getInstance().removeDriver();
         }
+    }
 }

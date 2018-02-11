@@ -14,16 +14,12 @@ public class PasswordPage extends AbstractPage {
     @FindBy(xpath = "//span[text()='Next']")
     private MyButton nextButton;
 
-
-   /* public PasswordPage(WebDriver driver) {
-        PageFactory.initElements(new MyDecorator(new DefaultElementLocatorFactory(driver)), this);
-    }*/
-   public PasswordPage(){
-       super();
-   }
+    public PasswordPage() {
+        super();
+    }
 
     public void typePassword(String password) {
-LOG.info("Type password and submit");
+        LOG.info("Type password and submit");
         passwordInput.sendKeys(password);
         nextButton.click();
     }

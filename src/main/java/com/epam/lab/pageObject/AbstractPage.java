@@ -7,14 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 
 public abstract class AbstractPage {
-    public WebDriver  driver = DriverThreadInit.getInstance().getDriver();
+    public WebDriver driver = DriverThreadInit.getInstance().getDriver();
 
 
-
-
-
-   public AbstractPage(){
-       PageFactory.initElements(new MyDecorator(new DefaultElementLocatorFactory(driver)), this);}
+    public AbstractPage() {
+        PageFactory.initElements(new MyDecorator(new DefaultElementLocatorFactory(driver)), this);
+    }
 
 }
 

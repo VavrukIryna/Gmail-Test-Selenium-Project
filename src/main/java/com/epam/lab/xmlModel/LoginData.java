@@ -1,4 +1,5 @@
 package com.epam.lab.xmlModel;
+
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -9,7 +10,10 @@ public class LoginData {
 
 
     private List<LoginDataProp> loginDataProps;
-    public LoginData() {}
+
+    public LoginData() {
+    }
+
     public LoginData(List<LoginDataProp> loginDataProps) {
         super();
         this.loginDataProps = loginDataProps;
@@ -20,6 +24,7 @@ public class LoginData {
     public List<LoginDataProp> getLoginDataProps() {
         return loginDataProps;
     }
+
     public void setLoginDataProps(List<LoginDataProp> loginDataProps) {
         this.loginDataProps = loginDataProps;
     }

@@ -15,9 +15,6 @@ public class MyWebElement implements WebElement {
     }
 
 
-
-
-
     @Override
     public void click() {
         element.click();

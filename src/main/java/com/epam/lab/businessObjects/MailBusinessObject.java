@@ -8,13 +8,12 @@ public class MailBusinessObject {
     private MailPage mailPage;
 
 
-   public MailBusinessObject()
-   {
-       this.mailPage=new MailPage();
-   }
+    public MailBusinessObject() {
+        this.mailPage = new MailPage();
+    }
 
 
-    public void writeMessage(String ... arg){
+    public void writeMessage(String... arg) {
         mailPage.typeMessage(arg);
         mailPage.submitMessage();
     }

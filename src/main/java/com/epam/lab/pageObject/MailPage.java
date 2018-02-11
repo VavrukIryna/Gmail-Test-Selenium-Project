@@ -29,84 +29,56 @@ public class MailPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='aoD hl']")
     private MyTextInput composeMailField;
 
-
     @FindBy(css = ".vM")
     private MyButton closeSenderMailButton;
 
     @FindBy(css = ".ag")
     private MyButton sentMailFolderButton;
 
-    /* @FindBy(xpath="//div[@class='BltHke nH oy8Mbf'][@role='main']")
-     private WebElement openSentMailButton;
- */
-
     @FindBy(css = ".g2")
     private MyButton lastMessageButton;
 
-   /* public MailPage(WebDriver driver) {
-        PageFactory.initElements(new MyDecorator(new DefaultElementLocatorFactory(driver)), this);
-    }*/
-   public MailPage()
-   {
-       super();
-   }
- /*   public void typeCorrectMessage(String correctMessage) {
-
-        composeMailField.click();
-        closeSenderMailButton.click();
-        senderMailField.sendKeys(correctMessage);
+    public MailPage() {
+        super();
     }
 
-    public void typeMessage(String incorrectMessage, String subject, String message) {
+    public void typeMessage(String... count) {
 
-        composeButton.click();
-        senderMailField.sendKeys(incorrectMessage);
-        subjectMailField.sendKeys(subject);
-        messageMailField.sendKeys(message);
+        if (count.length == 1) {
+            LOG.info("Close incorrect sender email");
+            composeMailField.click();
+            closeSenderMailButton.click();
+            LOG.info("Enter correct email address");
+            senderMailField.sendKeys(count[0]);
+        } else {
+            LOG.info("Click on compose button");
+            composeButton.click();
+            LOG.info("Enter incorrect email, fill subject and message fields");
+            senderMailField.sendKeys(count[0]);
+            subjectMailField.sendKeys(count[1]);
+            messageMailField.sendKeys(count[2]);
+        }
     }
-*/
-
-
- public void typeMessage(String ... count) {
-
-if (count.length==1){
-    LOG.info("Close incorrect sender email");
-    composeMailField.click();
-    closeSenderMailButton.click();
-    LOG.info("Enter correct email address");
-    senderMailField.sendKeys(count[0]);
-}
-   else {
-    LOG.info("Click on compose button");
-         composeButton.click();
-         LOG.info("Enter incorrect email, fill subject and message fields");
-         senderMailField.sendKeys(count[0]);
-         subjectMailField.sendKeys(count[1]);
-         messageMailField.sendKeys(count[2]);
-     }
-   }
 
     public boolean verifyWarningMessageExists() {
-LOG.info("Verify that warning message appears");
+        LOG.info("Verify that warning message appears");
         return warningOkButton.exists();
     }
 
     public void clickWarningMessage() {
-LOG.info("Click button to close warning message");
+        LOG.info("Click button to close warning message");
         warningOkButton.click();
     }
 
 
-
     public void submitMessage() {
-LOG.info("Submit message");
+        LOG.info("Submit message");
         submitButton.click();
     }
 
     public String checkSentMail() {
-LOG.info("Verify that message is moved to correct folder");
+        LOG.info("Verify that message is moved to correct folder");
         sentMailFolderButton.click();
-        // openSentMailButton.click();
         lastMessageButton.click();
         return lastMessageButton.getAttribute("email");
     }

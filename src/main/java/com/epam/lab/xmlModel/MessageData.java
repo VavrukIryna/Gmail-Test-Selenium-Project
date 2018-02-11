@@ -9,7 +9,10 @@ public class MessageData {
 
 
     private List<MessageDataProp> messageDataProps;
-    public MessageData() {}
+
+    public MessageData() {
+    }
+
     public MessageData(List<MessageDataProp> messageDataProps) {
         super();
         this.messageDataProps = messageDataProps;
@@ -20,6 +23,7 @@ public class MessageData {
     public List<MessageDataProp> getMessageDataProps() {
         return messageDataProps;
     }
+
     public void setMessageDataProps(List<MessageDataProp> messageDataProps) {
         this.messageDataProps = messageDataProps;
     }

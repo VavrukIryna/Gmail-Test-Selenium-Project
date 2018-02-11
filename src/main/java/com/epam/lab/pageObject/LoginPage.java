@@ -15,18 +15,12 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//span[text()='Next']")
     private MyButton nextButton;
 
-
-  /*  public LoginPage(WebDriver driver) {
-
-        PageFactory.initElements(new MyDecorator(new DefaultElementLocatorFactory(driver)), this);
-    }*/
-
-  public LoginPage() {
-      super();
-  }
+    public LoginPage() {
+        super();
+    }
 
     public void typeLogin(String login) {
-LOG.info("Type login and submit");
+        LOG.info("Type login and submit");
         loginInput.sendKeys(login);
         nextButton.click();
 

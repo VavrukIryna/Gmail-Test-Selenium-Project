@@ -12,7 +12,7 @@ import javax.xml.bind.Unmarshaller;
 
 public class XmlToObject {
     public static List getData() {
-        List<LoginDataProp> list=null;
+        List<LoginDataProp> list = null;
         try {
 
             File file = new File("src/main/resources/loginData.xml");
@@ -22,17 +22,12 @@ public class XmlToObject {
             LoginData que = (LoginData) jaxbUnmarshaller.unmarshal(file);
 
             list = que.getLoginDataProps();
-         /*   System.out.println("Answers:");
-            list = que.getLoginDataProps();
-            for (LoginDataProp ans : list)
-                System.out.println(" " + ans.getLoginData() + "  " + ans.getPasswordData());
-*/
-        }
 
-        catch (JAXBException e) {
+        } catch (JAXBException e) {
             e.printStackTrace();
         }
-   return list;  }
+        return list;
+    }
 }
 
 

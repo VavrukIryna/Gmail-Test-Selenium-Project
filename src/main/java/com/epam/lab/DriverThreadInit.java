@@ -19,24 +19,13 @@ public class DriverThreadInit {
 
     public ThreadLocal<WebDriver> threadDriver = new ThreadLocal<WebDriver>() // thread local driver object for webdriver
     {
-        //@Override
-      /*  protected WebDriver initialValue()
-        {
-            return new ChromeDriver(); // can be replaced with other browser drivers
-        }*/
         @Override
         protected WebDriver initialValue() {
             WebDriver driver;
             driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-            return  driver;
+            return driver;
         }
-
-       /* @Override
-        protected WebDriver initialValue() {
-
-               return SingletonDriver.getDriver();
-        }*/
 
     };
 

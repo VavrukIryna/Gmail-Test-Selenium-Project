@@ -9,14 +9,16 @@ public class MessageDataProp {
     private String testMessage;
 
 
-    public MessageDataProp() {}
+    public MessageDataProp() {
+    }
+
     public MessageDataProp(String correctMail, String incorrectMail, String testSubject, String testMessage) {
         super();
 
-        this.correctMail=correctMail;
-        this.incorrectMail=incorrectMail;
-        this.testMessage=testMessage;
-        this.testSubject=testSubject;
+        this.correctMail = correctMail;
+        this.incorrectMail = incorrectMail;
+        this.testMessage = testMessage;
+        this.testSubject = testSubject;
     }
 
 
