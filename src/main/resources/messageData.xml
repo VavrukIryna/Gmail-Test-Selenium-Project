@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<messageData>
+    <messageDataProps>
+        <correctMail>irynavavruk@gmail.com</correctMail>
+        <incorrectMail>test incorrect mail</incorrectMail>
+        <testSubject>test subject</testSubject>
+        <testMessage>test message</testMessage>
+    </messageDataProps>
+</messageData>

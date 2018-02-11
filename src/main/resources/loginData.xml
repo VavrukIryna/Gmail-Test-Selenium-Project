@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<loginData>
+    <loginDataProps>
+        <loginData>lvivkvitu</loginData>
+        <passwordData>guard3019</passwordData>
+    </loginDataProps>
+    <loginDataProps>
+        <loginData>test.iryna.mail</loginData>
+        <passwordData>testmail</passwordData>
+    </loginDataProps>
+    <loginDataProps>
+        <loginData>test.iryna.mail1</loginData>
+        <passwordData>testmail</passwordData>
+    </loginDataProps>
+    <loginDataProps>
+        <loginData>nulp.ippt</loginData>
+        <passwordData>hackerhacker</passwordData>
+    </loginDataProps>
+    <loginDataProps>
+        <loginData>lvivprofc</loginData>
+        <passwordData>profc110912</passwordData>
+    </loginDataProps>
+</loginData>
